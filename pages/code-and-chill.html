@@ -100,11 +100,11 @@ permalink: /code-and-chill
     </div>
 </div>
 <div class="content-width hpadding-small vpadding-large">
-    <div class="column-container">
+    <div class="flex">
 
         {% for session in site.pages %}
         {% if session.categories contains 'code-and-chill' %}
-        <div class="column l6 m12 padding-small">
+        <div class="l6 m12 padding-small">
             <div class="card card-hover">
                 <div class="card-content padding-small">
                     <h2 class="text-code-and-chill">{{ session.heading }}</h2>
