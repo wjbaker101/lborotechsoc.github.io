@@ -13,12 +13,11 @@ permalink: /workshops
 
 <div class="header-height"></div>
 <h1 class="title">Workshops</h1>
-<div class="workshops-container content-width hpadding-small vpadding-mid">
-    <div class="column-container">
+<div class="workshops-container flex content-width hpadding-small vpadding-mid">
 
         {% for workshop in site.pages %}
         {% if workshop.categories contains 'workshop' %}
-        <div class="column l4 m12 padding-small">
+        <div class="workshop-column l4 m12 padding-small">
             <div class="card card-hover">
                 <div class="card-content padding-small text-centered">
                     <img src="/resources/images/technologies/{{ workshop.image }}">
@@ -35,5 +34,4 @@ permalink: /workshops
         {% endif %}
         {% endfor %}
 
-    </div>
 </div>
