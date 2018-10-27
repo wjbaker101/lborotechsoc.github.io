@@ -23,7 +23,6 @@ github_username:  wjbaker101
 
 # Build settings
 markdown: kramdown
-theme: minima
 gems:
   - jekyll-feed
 exclude:
@@ -33,3 +32,9 @@ exclude:
 sass:
   sass_dir: _sass
   style: compressed
+
+defaults:
+  - scope:
+      path: "resources/images"
+    values:
+      image: true

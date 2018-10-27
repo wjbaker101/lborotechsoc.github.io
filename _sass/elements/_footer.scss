@@ -1,0 +1,20 @@
+body > footer
+{
+    border-top: 1px solid var(--dark-grey);
+    
+    .nav-container
+    {
+        list-style-type: none;
+        padding-left: 0;
+        
+        li
+        {
+            display: inline-block;
+            
+            + li
+            {
+                margin-left: 1rem;
+            }
+        }
+    }
+}

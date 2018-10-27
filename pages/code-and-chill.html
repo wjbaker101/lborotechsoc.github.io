@@ -1,0 +1,144 @@
+---
+layout: default
+title: Code and Chill | TechSoc
+permalink: /code-and-chill
+---
+
+<style>
+    body > header
+    {
+        background-color: transparent;
+        color: var(--white);
+    }
+    
+    body > header.scrolling
+    {
+        background-color: var(--white);
+        color: var(--black);
+    }
+    
+    .title-image
+    {
+        background-image: url(/resources/images/photos/code-and-chill-title-image.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    
+    .title-image::before
+    {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: var(--code-and-chill);
+        opacity: 0.7;
+        z-index: -1;
+    }
+    
+    .session-brand-image
+    {
+        max-height: 75px;
+    }
+    
+    .img-container
+    {
+        width: 150px;
+        max-width: 100%;
+    }
+    
+    .next-session-container
+    {
+        font-size: 1.25rem;
+        font-weight: bold;
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .details + .details
+    {
+        padding-left: 1rem;
+    }
+</style>
+
+<script>
+    window.addEventListener('load', () => techSoc.scrollIndicator.init('.arrow-scroll-indicator', 'var(--white)'));
+</script>
+
+<div class="title-image full-height cell-row">
+    <div class="cell cell-middle hpadding-small text-centered">
+        <div class="header-height"></div>
+        <img class="section" src="/resources/images/branding/code-and-chill-white.png" width="270">
+        <div class="next-session-container section">
+            <div class="text-white">
+                <h3>Next Session:</h3>
+                <div class="vpadding-small">
+                    <span class="details">
+                        <i class="far fa-calendar fa-fw"></i>
+                        <span>TBC</span>
+                    </span>
+                    <span class="details">
+                        <i class="fas fa-map-marker-alt fa-fw"></i>
+                        <span><!--EHB J205-->TBC</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="arrow-scroll-indicator"></div>
+    </div>
+</div>
+<div class="bordered-section hpadding-small vpadding-large">
+    <div class="content-text-width">
+        <h2>What is Code and Chill?</h2>
+        <p>Join us for our fortnightly Code and Chill Sessions, where you can either learn a new programming language, or get help with a personal project/coursework!</p>
+        <p>Free food and drinks, as well as music, will be available at the venue for your entertainment.</p>
+        <p>So come over, relax, and learn something new!</p>
+        <p><em><strong>Important:</strong> Please bring your own laptops and devices as there are no computers available at this venue!</em></p>
+    </div>
+</div>
+<div class="content-width hpadding-small vpadding-large">
+    <div class="column-container">
+
+        {% for session in site.pages %}
+        {% if session.categories contains 'code-and-chill' %}
+        <div class="column l6 m12 padding-small">
+            <div class="card card-hover">
+                <div class="card-content padding-small">
+                    <h2 class="text-code-and-chill">{{ session.heading }}</h2>
+                    <p><small>{{ session.eventDate }}</small></p>
+                </div>
+                <div class="card-content cell-row vpadding-regular text-centered">
+                    <div class="cell cell-middle v-card-content l6 hpadding-small">
+                        <div class="img-container margin-centered">
+                            <img class="session-brand-image" src="/resources/images/technologies/{{ session.beginners_image }}">
+                        </div>
+                    </div>
+                    <div class="cell cell-middle v-card-content l6 hpadding-small">
+                        <div class="img-container margin-centered">
+                            <img class="session-brand-image" src="/resources/images/technologies/{{ session.advanced_image }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content column-container">
+                    <div class="column l6 s12 padding-small">
+                        <h4>Beginners Topic</h4>
+                        <p>{{ session.beginners_title }}</p>
+                    </div>
+                    <div class="column l6 s12 padding-small">
+                        <h4>Advanced Topic</h4>
+                        <p>{{ session.advanced_title }}</p>
+                    </div>
+                </div>
+                <div class="card-content padding-small text-centered">
+                    <a href="{{ session.url }}"><button>View Session</button></a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
