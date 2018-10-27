@@ -1,0 +1,35 @@
+.card
+{
+    box-shadow: $shadow-base;
+    transition: box-shadow $duration-mid;
+}
+
+.card + .card
+{
+    margin-top: ($base-size * 2);
+}
+
+.card-content
+{
+    &::before,
+    &::after
+    {
+        content: '';
+        display: table;
+    }
+    
+    + .card-content
+    {
+        border-top: 1px solid var(--dark-grey);
+    }
+}
+
+.card.card-hover:hover
+{
+    box-shadow: $shadow-hover;
+}
+
+.v-card-content + .v-card-content
+{
+    border-left: 1px solid var(--dark-grey);
+}
