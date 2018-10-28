@@ -15,19 +15,30 @@ Our website is built using [Jekyll](https://jekyllrb.com/) and hosted by Github 
 4. Download the source code. Run the command:
 > `git clone https://github.com/LboroTechSoc/lborotechsoc.github.io.git`
 
-5. Run the website locally, at http://localhost:4000.
-   
+5. Run the website locally, at http://localhost:4000.\
    Open a terminal in the website folder and run:
 > `bundle exec jekyll serve`
 
 6. Merge changes into the master branch of the `lborotechsoc.github.io` repository.\
    The website will update with your changes after a few moments.
 
+### Trouble Installing?
+
+Jekyll can be difficult to install on Windows. Try the following:
+
+1. Rather than `gem install jekyll bundler` run:
+> `gem install bundler`
+
+2. Run the command:
+> `bundle install`
+
+3. Continue onto step 5 of the regular steps.
+
 ## Webpages
 
 Webpages are located in the `/pages` directory.
 
-```
+```yaml
 ---
 layout: default
 title: ... # Title of the page (displayed in the browser tab)
