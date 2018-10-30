@@ -10,6 +10,7 @@ body > footer
         a
         {
             display: inline-block;
+            transition: color $duration-mid;
             
             + a
             {
