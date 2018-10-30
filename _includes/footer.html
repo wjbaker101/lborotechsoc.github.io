@@ -2,7 +2,11 @@
     <div class="content-width text-centered">
         <section class="section navigation">
             <p><a href="/" class="hover-text-theme">home</a><a href="/about/" class="hover-text-theme">about</a><a href="/events/" class="hover-text-theme">events</a><a href="/stash/" class="hover-text-theme">stash</a><a href="/workshops/" class="hover-text-theme">workshops</a></p>
-            <p><a class="hover-text-theme" href="https://www.facebook.com/lborotechsoc" target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a><a class="hover-text-theme" href="https://twitter.com/lborotechsoc" target="_blank" rel="nofollow"><i class="fa fa-twitter"></i></a><a class="hover-text-theme" href="https://www.instagram.com/lborotechsoc/" target="_blank" rel="nofollow"><i class="fa fa-instagram"></i></a><a class="hover-text-theme" href="https://github.com/wjbaker101/loughborough.tech/" target="_blank" rel="nofollow"><i class="fa fa-github"></i></a><a class="hover-text-theme" href="https://discord.gg/N7KxW2G" target="_blank" rel="nofollow"><i class="fa discord-logo"></i></a></p>
+            <p>
+                {% for social_link in site.data.social_media_links %}
+                    <a class="hover-text-theme" href="{{ social_link.url }}" target="_blank" rel="nofollow"><i class="fab {{ social_link.icon }}"></i></a>
+                {% endfor %}
+            </p>
         </section>
         <section class="section copyright">
             <p>Copyright © 2016-{{ site.time | date: '%Y' }} Loughborough Technology Society</p>
