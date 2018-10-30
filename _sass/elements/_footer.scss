@@ -2,16 +2,16 @@ body > footer
 {
     border-top: 1px solid var(--dark-grey);
     
-    .nav-container
+    .navigation
     {
         list-style-type: none;
         padding-left: 0;
         
-        li
+        a
         {
             display: inline-block;
             
-            + li
+            + a
             {
                 margin-left: 1rem;
             }
